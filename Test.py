@@ -599,15 +599,7 @@ def update_dashboard(year_values, region_values, gender_values, education_values
     )
 
 #run dashapp on web browser
-import webbrowser
-from threading import Timer
-
-def open_browser():
-    webbrowser.open_new("http://127.0.0.1:8060/")
+import os
 
 if __name__ == "__main__":
-    Timer(1, open_browser).start()
-    app.run(debug=True, port=8060)
-
-if __name__ == "__main__":
-    app.run(debug=False, host="0.0.0.0", port=8050)
+    app.run(debug=False, host="0.0.0.0", port=int(os.environ.get("PORT", 8050)))
