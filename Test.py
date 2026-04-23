@@ -136,6 +136,7 @@ def top_products_table(df):
 
 #create dashapp
 app = Dash(__name__)
+server = app.server
 app.title = "Maven Market Dashboard"
 
 CHART_COLORS = ["#0f766e", "#f97316", "#0891b2", "#7c3aed", "#dc2626", "#65a30d"]
