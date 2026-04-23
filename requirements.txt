@@ -1,6 +1,0 @@
-dash
-plotly
-pandas
-webbrowser
-gunicorn
-plotly.express
