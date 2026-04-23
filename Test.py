@@ -1,5 +1,4 @@
-%pip install dash plotly pandas
-%pip install -U nbformat ipykernel plotly
+
 
 #import packages
 import pandas as pd
