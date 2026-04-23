@@ -1,6 +1,7 @@
 
 
 #import packages
+import os
 import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
@@ -599,7 +600,8 @@ def update_dashboard(year_values, region_values, gender_values, education_values
     )
 
 #run dashapp on web browser
-import os
+
+server = app.server
 
 if __name__ == "__main__":
     app.run(debug=False, host="0.0.0.0", port=int(os.environ.get("PORT", 8050)))
