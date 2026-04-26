@@ -97,19 +97,24 @@ def apply_filters(df, years=None, regions=None, genders=None, educations=None, o
     filtered = df.copy()
 
     if years:
-        filtered = filtered[filtered["year"].isin(years)]
+        years = [int(y) for y in years]
+        filtered = filtered[filtered["year"].astype(int).isin(years)]
 
     if regions and "sales_region" in filtered.columns:
-        filtered = filtered[filtered["sales_region"].isin(regions)]
+        regions = [str(r).strip() for r in regions]
+        filtered = filtered[filtered["sales_region"].astype(str).str.strip().isin(regions)]
 
     if genders and "gender" in filtered.columns:
-        filtered = filtered[filtered["gender"].isin(genders)]
+        genders = [str(g).strip() for g in genders]
+        filtered = filtered[filtered["gender"].astype(str).str.strip().isin(genders)]
 
     if educations and "education" in filtered.columns:
-        filtered = filtered[filtered["education"].isin(educations)]
+        educations = [str(e).strip() for e in educations]
+        filtered = filtered[filtered["education"].astype(str).str.strip().isin(educations)]
 
     if occupations and "occupation" in filtered.columns:
-        filtered = filtered[filtered["occupation"].isin(occupations)]
+        occupations = [str(o).strip() for o in occupations]
+        filtered = filtered[filtered["occupation"].astype(str).str.strip().isin(occupations)]
 
     return filtered
 
