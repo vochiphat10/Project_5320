@@ -602,5 +602,6 @@ def update_dashboard(year_values, region_values, gender_values, education_values
 #run dashapp on web browser
 
 server = app.server
+
 if __name__ == "__main__":
-    app.run(debug=False)
+    app.run(debug=False, host="0.0.0.0", port=int(os.environ.get("PORT", 8050)))
