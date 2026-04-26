@@ -308,6 +308,10 @@ def update_dashboard(year_values, region_values, gender_values, education_values
         educations=education_values,
         occupations=occupation_values,
     )
+    print("CALLBACK STARTED", flush=True)
+    print("Filters:", year_values, region_values, gender_values, education_values, occupation_values, flush=True)
+    print("Filtered rows:", len(filtered), flush=True)
+    print("Total sales:", filtered["sales"].sum() if not filtered.empty else 0, flush=True)
 
     if filtered.empty:
         empty_card = html.Div([
