@@ -586,7 +586,7 @@ def update_dashboard(year_values, region_values, gender_values, education_values
     table_df = top_products_table(filtered)
     table_data = table_df.to_dict("records")
     table_columns = [{"name": c.replace("_", " ").title(), "id": c} for c in table_df.columns]
-
+    print("ABOUT TO RETURN FIGURES", flush=True)
     return (
         cards,
         fig_monthly,
