@@ -2,5 +2,3 @@ dash
 plotly
 pandas
 gunicorn
-plotly.express
-
